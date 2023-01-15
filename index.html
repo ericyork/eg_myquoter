@@ -8,29 +8,30 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="container">
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-        </ul>
-        <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Real</a></li>
-        <li><a href="#" role="button">Click</a></li>
-        </ul>
-      </nav>
-    </header>
-    <hr>
+  <!-- <body class="container" onload="showOne()"> -->
     <main>
-      <h1>Welcome.</h1>
-      <p>In eg_myquoter, we're using <a href="https://picocss.com/">pico.css</a>!</p>
-      <p id=test></p>
+      <figure>
+        <blockquote id="blockquote">Select a category, then fetch a quote.</blockquote>
+        <figcaption id="author"></figcaption>
+        <!-- <button role="button" onclick="showOne()">Quote</button> -->
+        <div class="inputs">
+          <select name="category" id="select">
+            <option value="historical">Historical</option>
+            <option value="proverb">Proverb</option>
+            <option value="philosophy">Philosophy</option>
+            <option value="sappy">Sappy</option>
+            <option value="silly">Silly</option>
+          </select>
+          <button role="button" onclick="getCat()">Fetch</button>
+        </div>
+      </figure>
     </main>
     <hr>
     <footer>
-      <p>&copy;2023 Eric York</p>
+      <p>&copy;<span class="numbers">2023</span> Eric York</p>
     </footer>
     <!-- loads page scripts -->
+    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
