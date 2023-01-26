@@ -1,5 +1,7 @@
 // gets quotes from the local array
 function getCat() {
+  let selector = document.getElementById('select');
+  selector.disabled = false;
   let selected = document.getElementById('select').value;
   let quoteText = document.getElementById('blockquote');
   let quoteAuthor = document.getElementById('author');
@@ -11,10 +13,12 @@ function getCat() {
     } else {
       quoteAuthor.innerText = cat[rand].author;
     };
-  console.log(cat[rand]);
+  // console.log(cat[rand]);
 }
 // gets quotes (without category) from a public API call
 function showOne() {
+  let selector = document.getElementById('select');
+  selector.disabled = true;
   let rand = Math.floor(Math.random() * 999);
   let quoteText = document.getElementById('blockquote');
   let quoteAuthor = document.getElementById('author');
@@ -28,13 +32,13 @@ function showOne() {
     } else {
       quoteAuthor.innerText = data[rand].author;
     }
-    console.log(data[rand]);
+    // console.log(data[rand]);
   });
 }
 
 // gets category-less quotes from the API using alternative syntax
 // async function showOne() {
-//   let rand = Math.floor(Math.random() * 99);
+//   let rand = Math.floor(Math.random() * 999);
 //   let quoteText = document.getElementById('blockquote');
 //   let quoteAuthor = document.getElementById('author');
 //   // alternate promise syntax
@@ -46,5 +50,5 @@ function showOne() {
 //   } else {
 //     quoteAuthor.innerText = data[rand].author;
 //   }
-//   console.log(data[rand]);
-// }
+//   // console.log(data[rand]);
+// };
